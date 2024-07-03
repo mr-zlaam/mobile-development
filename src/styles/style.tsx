@@ -7,11 +7,15 @@ export const styles = StyleSheet.create({
     color: 'black',
     paddingHorizontal: 10,
   },
-  container: {},
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 8,
+  },
   card: {
     width: 100,
     height: 100,
-    display: 'flex',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
@@ -25,5 +29,13 @@ export const styles = StyleSheet.create({
   },
   cardThree: {
     backgroundColor: '#5da3fa',
+  },
+  headText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  cardElevated: {
+    backgroundColor: '#cad5e2',
+    elevation: 5,
   },
 });
