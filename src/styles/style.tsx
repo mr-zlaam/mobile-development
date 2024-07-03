@@ -38,4 +38,5 @@ export const styles = StyleSheet.create({
     backgroundColor: '#cad5e2',
     elevation: 5,
   },
+  fancyCard: {},
 });
