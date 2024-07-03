@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  SafeAreaView,
-  Text,
-  View,
-  StyleSheet,
-  useColorScheme,
-  Button,
-} from 'react-native';
+import { Button, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 function App(): JSX.Element {
   const theme = useColorScheme();
