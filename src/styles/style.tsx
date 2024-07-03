@@ -38,5 +38,17 @@ export const styles = StyleSheet.create({
     backgroundColor: '#cad5e2',
     elevation: 5,
   },
-  fancyCard: {},
+  innerText: {
+    fontSize: 16,
+  },
+  cardText: {
+    fontSize: 12,
+  },
+  button: {
+    backgroundColor: '#28282b',
+    padding: 10,
+    borderRadius: 4,
+    margin: 8,
+  },
+  btnText: { color: '#fff' },
 });
