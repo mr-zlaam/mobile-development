@@ -1,20 +1,23 @@
-import { useState } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageSourcePropType,
-  Image,
-  Button,
-} from 'react-native';
-import { PropsWithChildren } from 'react';
-import DiceOne from '../assets/One.png';
-import DiceTwo from '../assets/Two.png';
-import DiceThree from '../assets/Three.png';
-import DiceFour from '../assets/Four.png';
-import DiceFive from '../assets/Five.png';
-import DiceSix from '../assets/Six.png';
+import { PropsWithChildren, useState } from 'react';
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
+import {
+  Button,
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  View,
+} from 'react-native';
+import DiceFive from '../assets/Five.png';
+import DiceFour from '../assets/Four.png';
+import DiceOne from '../assets/One.png';
+import DiceSix from '../assets/Six.png';
+import DiceThree from '../assets/Three.png';
+import DiceTwo from '../assets/Two.png';
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
 //Dice Props Type
 interface DiceProps
   extends PropsWithChildren<{ imageUrl: ImageSourcePropType }> {}
@@ -54,6 +57,8 @@ function App() {
       default:
         break;
     }
+    ReactNativeHapticFeedback.trigger('impactLight', options);
+
     return diceImage;
   };
   return (
