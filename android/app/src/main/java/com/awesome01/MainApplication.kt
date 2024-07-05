@@ -10,6 +10,8 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
+import com.mkuczera.RNReactNativeHapticFeedbackPackage;
+
 
 class MainApplication : Application(), ReactApplication {
 
@@ -18,7 +20,7 @@ class MainApplication : Application(), ReactApplication {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
-              // add(MyReactNativePackage())
+              add(new RNReactNativeHapticFeedbackPackage())
             }
 
         override fun getJSMainModuleName(): String = "index"
