@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
 import type { PropsWithChildren } from 'react';
-import Icons from 'react-native-vector-icons/FontAwesome';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 //types
 type IconProps = PropsWithChildren<{
   name: string;
@@ -9,14 +8,14 @@ type IconProps = PropsWithChildren<{
 export default function Icon({ name }: IconProps): JSX.Element {
   switch (name) {
     case 'circle':
-      return <Icons name="circle-thin" size={38} color={'#f7cd2e'} />;
+      return <Text style={{ fontSize: 40 }}>O</Text>;
       break;
     case 'cross':
-      return <Icons name="times" size={38} color={'#38cc77'} />;
+      return <Text style={{ fontSize: 40 }}>X</Text>;
       break;
 
     default:
-      return <Icons name="pencil" size={38} color={'#ododod'} />;
+      return <Text></Text>;
   }
 }
 
