@@ -1,13 +1,13 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import TrackPlayer, { usePlaybackState } from 'react-native-track-player';
-import { State } from 'react-native-track-player';
+import { Pressable, StyleSheet, View } from 'react-native';
+import TrackPlayer, {
+  State,
+  usePlaybackState,
+} from 'react-native-track-player';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { playbackService } from '../../musicPlayerServices';
 
 export default function ControlCenter() {
   const playbackState = usePlaybackState();
-
   // Next Button
   const skipToNxt = async () => {
     await TrackPlayer.skipToNext();
@@ -34,7 +34,6 @@ export default function ControlCenter() {
       }
     }
   };
-
   return (
     <View style={styles.container}>
       <Pressable onPress={skipToPrev}>
@@ -42,18 +41,12 @@ export default function ControlCenter() {
       </Pressable>
       <Pressable
         onPress={() => {
-          if (isPlaybackState(playbackState)) {
-            togglePlayback(playbackState);
-          }
+          togglePlayback(playbackState.state!);
         }}
       >
         <Icon
           style={styles.icon}
-          name={
-            isPlaybackState(playbackState) && playbackState === State.Playing
-              ? 'pause'
-              : 'play-arrow'
-          }
+          name={playbackState.state === 'paused' ? 'play-arrow' : 'pause'}
           size={40}
         />
       </Pressable>

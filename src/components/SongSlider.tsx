@@ -2,8 +2,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Slider from '@react-native-community/slider';
 import { useProgress } from 'react-native-track-player';
+import TrackPlayer from 'react-native-track-player';
+
 export default function SongSlider() {
   const { position, duration } = useProgress();
+
+  const handleSlidingComplete = async (value: number) => {
+    await TrackPlayer.seekTo(value);
+  };
 
   return (
     <View>
@@ -14,6 +20,7 @@ export default function SongSlider() {
         thumbTintColor="#28282b"
         maximumTrackTintColor="#28282b"
         style={styles.sliderContainer}
+        onSlidingComplete={handleSlidingComplete}
       />
       <View style={styles.timeContainer}>
         <Text style={styles.time}>
@@ -34,12 +41,10 @@ const styles = StyleSheet.create({
     width: 350,
     height: 40,
     marginTop: 25,
-
     flexDirection: 'row',
   },
   timeContainer: {
     width: 340,
-
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

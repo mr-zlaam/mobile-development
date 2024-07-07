@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
   ActivityIndicator,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
-import { setupPlayer as isSetupPlayer, addTrack } from '../musicPlayerServices';
-import ControlCenter from './components/ControlCenter';
+import { addTrack, setupPlayer as isSetupPlayer } from '../musicPlayerServices';
+import MusicPlayer from './components/screens/MusicPlayer';
 function App() {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
 
@@ -31,9 +32,9 @@ function App() {
     );
   return (
     <>
-      <View>
-        <Text selectable>Open app.tsx and build your first app</Text>
-        <ControlCenter />
+      <View style={styles.container}>
+        <StatusBar barStyle={'light-content'} backgroundColor={'#28282b'} />
+        <MusicPlayer />
       </View>
     </>
   );
