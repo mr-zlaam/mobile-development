@@ -1,7 +1,33 @@
-import {} from 'react';
-import { View, Text } from 'react-native';
-
+import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ActivityIndicator,
+} from 'react-native';
+import { setupPlayer as isSetupPlayer, addTrack } from '../musicPlayerServices';
 function App() {
+  const [isPlayerReady, setIsPlayerReady] = useState(false);
+
+  const setupPlayer = async () => {
+    let isSetup: boolean = await isSetupPlayer();
+    if (isSetup) {
+      await addTrack();
+    }
+    setIsPlayerReady(isSetup);
+  };
+  useEffect(() => {
+    setupPlayer();
+  }, []);
+  if (!isPlayerReady)
+    return (
+      <>
+        <SafeAreaView>
+          <ActivityIndicator />
+        </SafeAreaView>
+      </>
+    );
   return (
     <>
       <View>
@@ -12,3 +38,8 @@ function App() {
 }
 
 export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
