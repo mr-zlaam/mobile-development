@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <View>
-        <Text>Open app.tsx and build your first app</Text>
+        <Text selectable>Open app.tsx and build your first app</Text>
       </View>
     </>
   );
