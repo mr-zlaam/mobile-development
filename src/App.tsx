@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { setupPlayer as isSetupPlayer, addTrack } from '../musicPlayerServices';
+import ControlCenter from './components/ControlCenter';
 function App() {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
 
@@ -32,6 +33,7 @@ function App() {
     <>
       <View>
         <Text selectable>Open app.tsx and build your first app</Text>
+        <ControlCenter />
       </View>
     </>
   );
