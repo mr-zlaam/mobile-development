@@ -1,5 +1,4 @@
 import TrackPlayer, { Event, RepeatMode } from 'react-native-track-player';
-import { trackPlayer as trackPlayerType } from '../trackPlayer';
 import { playListData } from './src/constants';
 export async function setupPlayer() {
   let isSetup = false;
