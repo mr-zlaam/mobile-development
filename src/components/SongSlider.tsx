@@ -17,7 +17,7 @@ export default function SongSlider() {
         value={position}
         minimumValue={0}
         maximumValue={duration}
-        thumbTintColor="#28282b"
+        thumbTintColor="#ffffff"
         maximumTrackTintColor="#28282b"
         style={styles.sliderContainer}
         onSlidingComplete={handleSlidingComplete}
